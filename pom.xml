@@ -15,6 +15,9 @@
     <artifactId>virtuoso-service-discovery</artifactId>
     <packaging>pom</packaging>
     <description>Virtuoso Service registration and discovery</description>
+    <modules>
+        <module>service-discovery</module>
+    </modules>
 
     <repositories>
         <repository>
