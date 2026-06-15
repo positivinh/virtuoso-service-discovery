@@ -1,6 +1,9 @@
 spring:
   application:
     name: service-discovery
+  cloud:
+    compatibility-verifier:
+      enabled: false # change when spring cloud release train supports spring boot 4.1.0
 
 server:
   port: 8761
