@@ -1,0 +1,25 @@
+# Builds every pull request to main and every push to main. Nothing is published: the
+# deliverable is the OCI image (`-P docker`). The steps live in the shared workflow in
+# positivinh/virtuoso.
+
+name: CI
+
+on:
+  push:
+    branches: [ 'main*' ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  packages: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    uses: positivinh/virtuoso/.github/workflows/maven-build.yml@main
+    with:
+      java-version: '17'
