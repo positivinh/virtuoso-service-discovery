@@ -17,6 +17,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.positivinh.virtuoso.observability</groupId>
+            <artifactId>observability-starter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
